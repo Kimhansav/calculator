@@ -45,7 +45,7 @@ class Calculator(QWidget):
 
     def clearMessage(self):
         self.te1.clear()
-        
+
 if __name__=='__main__':
     app = QApplication(sys.argv)
     view = Calculator()
