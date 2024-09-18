@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#ch 6.3.2 ui.py
-=======
-#ch 6.3.1 ui.py
->>>>>>> a401ddb7c41ce0a64f3e8d0e9ade70b3887f00ee
+#ch 6.6.1 ui.py
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout,
                              QMessageBox, QPlainTextEdit, QHBoxLayout, QLineEdit, QComboBox) #QLineEdit, QComboBox 추가
 from PyQt5.QtGui import QIcon
@@ -30,7 +26,7 @@ class View(QWidget):
         self.le2.setAlignment(QtCore.Qt.AlignRight) #라인 에디트2 문자열 배치 설정
 
         self.cb = QComboBox(self) #콤보 박스 추가
-        self.cb.addItems(['+', '-', '*', '/']) #콤보 박스 항목 추가(연산자로 사용)
+        self.cb.addItems(['+', '-', '*', '/', '^']) #거듭제곱 연산자 추가
 
         hbox_formular = QHBoxLayout() #새로 정의한 위젯을 QHBoxLayout에 배치
         hbox_formular.addWidget(self.le1)
