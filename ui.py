@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #ch 6.3.2 ui.py
+=======
+#ch 6.3.1 ui.py
+>>>>>>> a401ddb7c41ce0a64f3e8d0e9ade70b3887f00ee
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout,
                              QMessageBox, QPlainTextEdit, QHBoxLayout, QLineEdit, QComboBox) #QLineEdit, QComboBox 추가
 from PyQt5.QtGui import QIcon
@@ -14,12 +18,13 @@ class View(QWidget):
         self.te1 = QPlainTextEdit() #텍스트 에디트 위젯 생성
         self.te1.setReadOnly(True) #텍스트 에디트 위젯을 읽기만 가능하도록 수정
 
-        self.btn1 = QPushButton('Message', self) #버튼 추가
-
+        self.btn1 = QPushButton('Calc', self) #버튼 추가
         self.btn2 = QPushButton('clear', self) #버튼 2 추가
 
         self.le1 = QLineEdit('0', self) #라인 에디트1 추가
         self.le1.setAlignment(QtCore.Qt.AlignRight) #라인 에디트1 문자열 배치 설정
+        self.le1.setFocus(True) #포커스 설정
+        self.le1.selectAll() #텍스트 전체 선택
 
         self.le2 = QLineEdit('0', self) #라인 에디트2 추가
         self.le2.setAlignment(QtCore.Qt.AlignRight) #라인 에디트2 문자열 배치 설정
@@ -52,8 +57,7 @@ class View(QWidget):
         self.resize(256,256)
         self.show()
 
-    def activateMessage(self, text): #버튼을 클릭할 때 동작하는 함수 : 메시지 박스 출력
-        # QMessageBox.information(self, "information", "Button clicked!")
+    def setDisplay(self, text): #버튼을 클릭할 때 동작하는 함수 : 메시지 박스 출력
         self.te1.appendPlainText(text)
 
     def clearMessage(self):
