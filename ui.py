@@ -1,4 +1,4 @@
-#ch 6.2.1 ui.py
+#ch 6.3.2 ui.py
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout,
                              QMessageBox, QPlainTextEdit, QHBoxLayout, QLineEdit, QComboBox) #QLineEdit, QComboBox 추가
 from PyQt5.QtGui import QIcon
@@ -52,9 +52,9 @@ class View(QWidget):
         self.resize(256,256)
         self.show()
 
-    def activateMessage(self): #버튼을 클릭할 때 동작하는 함수 : 메시지 박스 출력
+    def activateMessage(self, text): #버튼을 클릭할 때 동작하는 함수 : 메시지 박스 출력
         # QMessageBox.information(self, "information", "Button clicked!")
-        self.te1.appendPlainText("Button clicked!")
+        self.te1.appendPlainText(text)
 
     def clearMessage(self):
         self.te1.clear()
