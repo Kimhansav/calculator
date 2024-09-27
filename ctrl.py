@@ -1,4 +1,4 @@
-#ch 7.5.1 ctrl.py
+#ch 7.5.2 ctrl.py
 class Control:
 
     def __init__(self, view):
@@ -39,7 +39,11 @@ class Control:
         return a / b
     
     def pow(self, a, b):
-        if (a == 0):
-            return 0
-        else:
-            return pow(a, b)
+        try:
+            if (a == 0):
+                raise Exception("Base Error")
+        except Exception as e:
+            return e
+        
+        return pow(a, b)
+    
